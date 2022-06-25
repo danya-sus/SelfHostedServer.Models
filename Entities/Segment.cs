@@ -6,6 +6,7 @@ namespace SelfHostedServer.Models.Entities
 {
     public class Segment
     {
+        public Segment() { }
         public Segment(String operation_type, DateTimeOffset operation_time,
                        String operation_place, String name,
                        String surname, String patronymic,
@@ -18,27 +19,27 @@ namespace SelfHostedServer.Models.Entities
                        String arrive_place, DateTimeOffset arrive_datetime,
                        String pnr_id)
         {
-            this.Operation_type = operation_type;
-            this.Operation_time = operation_time;
-            this.Operation_place = operation_place;
+            this.OperationType = operation_type;
+            this.OperationTime = operation_time;
+            this.OperationPlace = operation_place;
             this.Name = name;
             this.Surname = surname;
             this.Patronymic = patronymic;
-            this.Doc_type = doc_type;
-            this.Doc_number = doc_number;
+            this.DocType = doc_type;
+            this.DocNumber = doc_number;
             this.Birthdate = birthdate;
             this.Gender = gender;
-            this.Passenger_type = passenger_type;
-            this.Ticket_number = ticket_number;
-            this.Ticket_type = ticket_type;
-            this.Serial_number = serial_number;
-            this.Airline_code = airline_code;
-            this.Flight_num = flight_num;
-            this.Depart_place = depart_place;
-            this.Depart_datetime = depart_datetime;
-            this.Arrive_place = arrive_place;
-            this.Arrive_datetime = arrive_datetime;
-            this.Pnr_id = pnr_id;
+            this.PassengerType = passenger_type;
+            this.TicketNumber = ticket_number;
+            this.TicketType = ticket_type;
+            this.SerialNumber = serial_number;
+            this.AirlineCode = airline_code;
+            this.FlightNum = flight_num;
+            this.DepartPlace = depart_place;
+            this.DepartDatetime = depart_datetime;
+            this.ArrivePlace = arrive_place;
+            this.ArriveDatetime = arrive_datetime;
+            this.PnrID = pnr_id;
             this.Refund = false;
         }
 
@@ -46,54 +47,54 @@ namespace SelfHostedServer.Models.Entities
                        String operation_place, Passenger passenger,
                        Route route, int serial_number)
         {
-            this.Operation_type = operation_type;
-            this.Operation_time = operation_time;
-            this.Operation_place = operation_place;
+            this.OperationType = operation_type;
+            this.OperationTime = operation_time;
+            this.OperationPlace = operation_place;
             this.Name = passenger.Name;
             this.Surname = passenger.Surname;
             this.Patronymic = passenger.Patronymic;
-            this.Doc_type = passenger.Doc_type;
-            this.Doc_number = passenger.Doc_number;
+            this.DocType = passenger.DocType;
+            this.DocNumber = passenger.DocNumber;
             this.Birthdate = passenger.Birthdate;
             this.Gender = passenger.Gender;
-            this.Passenger_type = passenger.Passenger_type;
-            this.Ticket_number = passenger.Ticket_number;
-            this.Ticket_type = passenger.Ticket_type;
-            this.Serial_number = serial_number;
-            this.Airline_code = route.Airline_code;
-            this.Flight_num = route.Flight_num;
-            this.Depart_place = route.Depart_place;
-            this.Depart_datetime = route.Depart_datetime;
-            this.Arrive_place = route.Arrive_place;
-            this.Arrive_datetime = route.Arrive_datetime;
-            this.Pnr_id = route.Pnr_id;
+            this.PassengerType = passenger.PassengerType;
+            this.TicketNumber = passenger.TicketNumber;
+            this.TicketType = passenger.TicketType;
+            this.SerialNumber = serial_number;
+            this.AirlineCode = route.AirlineCode;
+            this.FlightNum = route.FlightNum;
+            this.DepartPlace = route.DepartPlace;
+            this.DepartDatetime = route.DepartDatetime;
+            this.ArrivePlace = route.ArrivePlace;
+            this.ArriveDatetime = route.ArriveDatetime;
+            this.PnrID = route.PnrID;
             this.Refund = false;
         }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
-        public String Operation_type { get; set; }
-        public DateTimeOffset Operation_time { get; set; }
-        public String Operation_place { get; set; }
+        public String OperationType { get; set; }
+        public DateTimeOffset OperationTime { get; set; }
+        public String OperationPlace { get; set; }
         public String Name { get; set; }
         public String Surname { get; set; }
         public String Patronymic { get; set; }
-        public String Doc_type { get; set; }
-        public UInt64 Doc_number { get; set; }
+        public String DocType { get; set; }
+        public UInt64 DocNumber { get; set; }
         public DateTime Birthdate { get; set; }
         public String Gender { get; set; }
-        public String Passenger_type { get; set; }
-        public UInt64 Ticket_number { get; set; }
-        public int Ticket_type { get; set; }
-        public int Serial_number { get; set; }
-        public String Airline_code { get; set; }
-        public int Flight_num { get; set; }
-        public String Depart_place { get; set; }
-        public DateTimeOffset Depart_datetime { get; set; }
-        public String Arrive_place { get; set; }
-        public DateTimeOffset Arrive_datetime { get; set; }
-        public String Pnr_id { get; set; }
+        public String PassengerType { get; set; }
+        public UInt64 TicketNumber { get; set; }
+        public int TicketType { get; set; }
+        public int SerialNumber { get; set; }
+        public String AirlineCode { get; set; }
+        public int FlightNum { get; set; }
+        public String DepartPlace { get; set; }
+        public DateTimeOffset DepartDatetime { get; set; }
+        public String ArrivePlace { get; set; }
+        public DateTimeOffset ArriveDatetime { get; set; }
+        public String PnrID { get; set; }
         public bool Refund { get; set; }
     }
 }
